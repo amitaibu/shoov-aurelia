@@ -7,7 +7,7 @@ import {LoginApi} from './login-api';
 export class App {
   constructor(router, api) {
     this.router = router;
-    // this.api = api;
+    this.api = api;
 
     this.router.configure(config => {
       config.title = 'DemoApp';

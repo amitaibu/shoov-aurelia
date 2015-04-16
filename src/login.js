@@ -1,7 +1,8 @@
 import {inject} from 'aurelia-framework';
+import {Router} from 'aurelia-router';
 import {LoginApi} from './login-api';
 
-@inject(LoginApi)
+@inject(Router, LoginApi)
 export class Login {
 
   credentials = {
@@ -9,7 +10,8 @@ export class Login {
     pass: 'admin'
   }
 
-  constructor(api){
+  constructor(router, api) {
+    this.router = router;
     this.api = api;
   }
 
@@ -18,10 +20,11 @@ export class Login {
 
 
   get canLogin() {
-    return this.credentials.username && this.credentials.pass && !this.api.isRequesting;
+    // return this.credentials.username && this.credentials.pass && !this.api.isRequesting;
+    return this.credentials.username && this.credentials.pass;
   }
 
   login() {
-
+    this.router.navigate('');
   }
 }

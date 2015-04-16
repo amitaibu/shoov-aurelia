@@ -1,49 +1,22 @@
-let latency = 0;
-let id = 0;
+import {inject} from 'aurelia-framework';
+import {HttpClient} from 'aurelia-http-client';
 
-function getId(){
-  return ++id;
-}
-
-let contacts = [
-  {
-    id:getId(),
-    firstName:'John',
-    lastName:'Tolkien',
-    email:'tolkien@inklings.com',
-    phoneNumber:'867-5309'
-  },
-  {
-    id:getId(),
-    firstName:'Clive',
-    lastName:'Lewis',
-    email:'lewis@inklings.com',
-    phoneNumber:'867-5309'
-  },
-  {
-    id:getId(),
-    firstName:'Owen',
-    lastName:'Barfield',
-    email:'barfield@inklings.com',
-    phoneNumber:'867-5309'
-  },
-  {
-    id:getId(),
-    firstName:'Charles',
-    lastName:'Williams',
-    email:'williams@inklings.com',
-    phoneNumber:'867-5309'
-  },
-  {
-    id:getId(),
-    firstName:'Roger',
-    lastName:'Green',
-    email:'green@inklings.com',
-    phoneNumber:'867-5309'
-  }
-];
-
+@inject(HttpClient)
 export class LoginApi {
+  url = 'http://localhost/shoov/www/api/login-token'
+
+  constructor(http){
+    this.http = http;
+  }
+
+  login(credentials) {
+    return this.http.post(this.url, credentials).then(response => {
+      log(response);
+    });
+  }
+
+  ///////
+
   getContactList(){
     this.isRequesting = true;
     return new Promise(resolve => {
