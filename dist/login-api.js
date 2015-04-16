@@ -1,5 +1,5 @@
 System.register([], function (_export) {
-  var _classCallCheck, _createClass, latency, id, contacts, LoginAPI;
+  var _classCallCheck, _createClass, latency, id, contacts, LoginApi;
 
   function getId() {
     return ++id;
@@ -48,12 +48,12 @@ System.register([], function (_export) {
         phoneNumber: '867-5309'
       }];
 
-      LoginAPI = (function () {
-        function LoginAPI() {
-          _classCallCheck(this, LoginAPI);
+      LoginApi = (function () {
+        function LoginApi() {
+          _classCallCheck(this, LoginApi);
         }
 
-        _createClass(LoginAPI, [{
+        _createClass(LoginApi, [{
           key: 'getContactList',
           value: function getContactList() {
             var _this = this;
@@ -118,10 +118,10 @@ System.register([], function (_export) {
           }
         }]);
 
-        return LoginAPI;
+        return LoginApi;
       })();
 
-      _export('LoginAPI', LoginAPI);
+      _export('LoginApi', LoginApi);
     }
   };
 });

@@ -43,7 +43,7 @@ let contacts = [
   }
 ];
 
-export class LoginAPI {
+export class LoginApi {
   getContactList(){
     this.isRequesting = true;
     return new Promise(resolve => {

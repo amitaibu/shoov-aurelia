@@ -1,5 +1,5 @@
 System.register(['aurelia-framework', 'aurelia-router', './login-api'], function (_export) {
-  var inject, Router, LoginAPI, _classCallCheck, App;
+  var inject, Router, LoginApi, _classCallCheck, App;
 
   return {
     setters: [function (_aureliaFramework) {
@@ -7,7 +7,7 @@ System.register(['aurelia-framework', 'aurelia-router', './login-api'], function
     }, function (_aureliaRouter) {
       Router = _aureliaRouter.Router;
     }, function (_loginApi) {
-      LoginAPI = _loginApi.LoginAPI;
+      LoginApi = _loginApi.LoginApi;
     }],
     execute: function () {
       'use strict';
@@ -27,7 +27,7 @@ System.register(['aurelia-framework', 'aurelia-router', './login-api'], function
         }
 
         var _App = App;
-        App = inject(LoginAPI)(App) || App;
+        App = inject(LoginApi)(App) || App;
         App = inject(Router)(App) || App;
         return App;
       })();

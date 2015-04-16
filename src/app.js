@@ -1,9 +1,9 @@
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
-import {LoginAPI} from './login-api';
+import {LoginApi} from './login-api';
 
 @inject(Router)
-@inject(LoginAPI)
+@inject(LoginApi)
 export class App {
   constructor(router, api) {
     this.router = router;
