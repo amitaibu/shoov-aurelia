@@ -3,16 +3,25 @@ import {HttpClient} from 'aurelia-http-client';
 
 @inject(HttpClient)
 export class LoginApi {
-  url = 'http://localhost/shoov/www/api/login-token'
+  baseUri = 'http://localhost/shoov/www'
+
+  // 'Authorization': 'Basic ' + Utils.Base64.encode(user.username + ':' + user.password)
+  code = 'YWRtaW46YWRtaW4=';
 
   constructor(http){
     this.http = http;
   }
 
   login(credentials) {
-    return this.http.post(this.url, credentials).then(response => {
-      log(response);
-    });
+    this.http
+    .configure(x => {
+      x.withBaseUri(this.baseUri);
+      x.withHeader('Authorization', 'Basic YWRtaW46YWRtaW4=');
+    })
+    .get('api/login-token')
+      .then(response => {
+        log(response);
+      });
   }
 
   ///////

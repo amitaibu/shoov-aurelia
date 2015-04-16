@@ -25,6 +25,7 @@ export class Login {
   }
 
   login() {
-    this.router.navigate('');
+    this.api.login();
+    // this.router.navigate('');
   }
 }
