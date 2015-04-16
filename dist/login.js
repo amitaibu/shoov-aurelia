@@ -18,8 +18,10 @@ System.register(['aurelia-framework', './login-api'], function (_export) {
         function Login(api) {
           _classCallCheck(this, _Login);
 
-          this.username = '';
-          this.pass = 'bar';
+          this.credentials = {
+            username: 'admin',
+            pass: 'admin'
+          };
 
           this.api = api;
         }
@@ -27,11 +29,7 @@ System.register(['aurelia-framework', './login-api'], function (_export) {
         var _Login = Login;
 
         _createClass(_Login, [{
-          key: 'username',
-          value: undefined,
-          enumerable: true
-        }, {
-          key: 'pass',
+          key: 'credentials',
           value: undefined,
           enumerable: true
         }, {
@@ -40,7 +38,7 @@ System.register(['aurelia-framework', './login-api'], function (_export) {
         }, {
           key: 'canLogin',
           get: function () {
-            return this.username && this.pass && !this.api.isRequesting;
+            return this.credentials.username && this.credentials.pass && !this.api.isRequesting;
           }
         }, {
           key: 'login',
@@ -55,4 +53,4 @@ System.register(['aurelia-framework', './login-api'], function (_export) {
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7dURBSWEsS0FBSzs7OztpQ0FKVixNQUFNOzsyQkFDTixRQUFROzs7Ozs7Ozs7QUFHSCxXQUFLO0FBSUwsaUJBSkEsS0FBSyxDQUlKLEdBQUcsRUFBQzs7O2VBSGhCLFFBQVEsR0FBRyxFQUFFO2VBQ2IsSUFBSSxHQUFHLEtBQUs7O0FBR1YsY0FBSSxDQUFDLEdBQUcsR0FBRyxHQUFHLENBQUM7U0FDaEI7O3FCQU5VLEtBQUs7Ozs7Ozs7Ozs7OztpQkFRUixrQkFBQyxNQUFNLEVBQUUsRUFBRSxFQUFFLE1BQU0sRUFBRSxFQUM1Qjs7O2VBR1csWUFBRztBQUNiLG1CQUFPLElBQUksQ0FBQyxRQUFRLElBQUksSUFBSSxDQUFDLElBQUksSUFBSSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsWUFBWSxDQUFDO1dBQzdEOzs7aUJBRUksaUJBQUcsRUFFUDs7O0FBbEJVLGFBQUssR0FEakIsTUFBTSxDQUFDLFFBQVEsQ0FBQyxDQUNKLEtBQUssS0FBTCxLQUFLO2VBQUwsS0FBSzs7O3VCQUFMLEtBQUsiLCJmaWxlIjoibG9naW4uanMiLCJzb3VyY2VSb290IjoiL3NyYy8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7dURBSWEsS0FBSzs7OztpQ0FKVixNQUFNOzsyQkFDTixRQUFROzs7Ozs7Ozs7QUFHSCxXQUFLO0FBT0wsaUJBUEEsS0FBSyxDQU9KLEdBQUcsRUFBQzs7O2VBTGhCLFdBQVcsR0FBRztBQUNaLG9CQUFRLEVBQUUsT0FBTztBQUNqQixnQkFBSSxFQUFFLE9BQU87V0FDZDs7QUFHQyxjQUFJLENBQUMsR0FBRyxHQUFHLEdBQUcsQ0FBQztTQUNoQjs7cUJBVFUsS0FBSzs7Ozs7Ozs7aUJBV1Isa0JBQUMsTUFBTSxFQUFFLEVBQUUsRUFBRSxNQUFNLEVBQUUsRUFDNUI7OztlQUdXLFlBQUc7QUFDYixtQkFBTyxJQUFJLENBQUMsV0FBVyxDQUFDLFFBQVEsSUFBSSxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksSUFBSSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsWUFBWSxDQUFDO1dBQ3JGOzs7aUJBRUksaUJBQUcsRUFFUDs7O0FBckJVLGFBQUssR0FEakIsTUFBTSxDQUFDLFFBQVEsQ0FBQyxDQUNKLEtBQUssS0FBTCxLQUFLO2VBQUwsS0FBSzs7O3VCQUFMLEtBQUsiLCJmaWxlIjoibG9naW4uanMiLCJzb3VyY2VSb290IjoiL3NyYy8ifQ==

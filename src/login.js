@@ -3,8 +3,11 @@ import {LoginApi} from './login-api';
 
 @inject(LoginApi)
 export class Login {
-  username = '';
-  pass = 'bar';
+
+  credentials = {
+    username: 'admin',
+    pass: 'admin'
+  }
 
   constructor(api){
     this.api = api;
@@ -15,7 +18,7 @@ export class Login {
 
 
   get canLogin() {
-    return this.username && this.pass && !this.api.isRequesting;
+    return this.credentials.username && this.credentials.pass && !this.api.isRequesting;
   }
 
   login() {
