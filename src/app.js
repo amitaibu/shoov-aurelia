@@ -1,17 +1,20 @@
+import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
-import {WebAPI} from './web-api';
+import {LoginAPI} from './login-api';
 
+@inject(Router)
+@inject(LoginAPI)
 export class App {
-  static inject = [Router, WebAPI];
   constructor(router, api) {
     this.router = router;
-    this.api = api;
+    // this.api = api;
 
     this.router.configure(config => {
-      config.title = 'Contacts';
+      config.title = 'DemoApp';
       config.map([
-        { route: '',              moduleId: 'no-selection',   title: 'Select'},
-        { route: 'contacts/:id',  moduleId: 'contact-detail' }
+        { route: '',              moduleId: './no-selection',   title: 'Select'},
+        { route: 'contacts/:id',  moduleId: './contact-detail' },
+        { route: 'login',         moduleId: './login', nav: true }
       ]);
     });
   }
