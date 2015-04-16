@@ -11,6 +11,7 @@ System.config({
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.11.0",
     "aurelia-event-aggregator": "github:aurelia/event-aggregator@0.3.0",
     "aurelia-http-client": "github:aurelia/http-client@0.7.0",
+    "bluebird": "npm:bluebird@2.9.24",
     "bootstrap": "github:twbs/bootstrap@3.3.4",
     "css": "github:systemjs/plugin-css@0.1.9",
     "font-awesome": "npm:font-awesome@4.3.0",
@@ -173,6 +174,10 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
+    "npm:bluebird@2.9.24": {
+      "events": "github:jspm/nodelibs-events@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
     "npm:buffer@3.1.2": {
       "base64-js": "npm:base64-js@0.0.8",
       "ieee754": "npm:ieee754@1.1.4",
@@ -259,4 +264,3 @@ System.config({
     }
   }
 });
-
