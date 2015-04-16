@@ -1,6 +1,8 @@
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 import {LoginApi} from './login-api';
+import 'bootstrap';
+import 'bootstrap/css/bootstrap.css!';
 
 @inject(Router)
 @inject(LoginApi)
