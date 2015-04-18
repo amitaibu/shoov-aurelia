@@ -5,22 +5,24 @@ import {HttpClient} from 'aurelia-http-client';
 export class LoginApi {
   baseUri = 'http://localhost/shoov/www'
 
-  // 'Authorization': 'Basic ' + Utils.Base64.encode(user.username + ':' + user.password)
-  code = 'YWRtaW46YWRtaW4=';
 
   constructor(http){
     this.http = http;
   }
 
   login(credentials) {
-    this.http
+    // Convert to base64.
+    var base64 = window.btoa(credentials.username + ':' + credentials.pass);
+    return this.http
     .configure(x => {
       x.withBaseUri(this.baseUri);
-      x.withHeader('Authorization', 'Basic YWRtaW46YWRtaW4=');
+      x.withHeader('Authorization', 'Basic ' + base64);
     })
     .get('api/login-token')
       .then(response => {
-        log(response);
+        // Add access token to the localStorage.
+        var accessToken = JSON.parse(response.response).access_token;
+        localStorage.setItem('access_token', accessToken);
       });
   }
 

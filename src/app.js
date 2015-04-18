@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {Router} from 'aurelia-router';
+import {Router, Redirect} from 'aurelia-router';
 import {LoginApi} from './login-api';
 import 'bootstrap';
 import 'bootstrap/css/bootstrap.css!';
@@ -13,11 +13,30 @@ export class App {
 
     this.router.configure(config => {
       config.title = 'DemoApp';
+      // Add a route filter to the authorize extensibility point.
+      config.addPipelineStep('authorize', AuthorizeStep);
       config.map([
         { route: '',              moduleId: './no-selection',   title: 'Select'},
         { route: 'contacts/:id',  moduleId: './contact-detail' },
-        { route: 'login',         moduleId: './login', nav: true }
+        { route: 'login',         moduleId: './login', nav: true},
+        { route: 'ci-builds',     moduleId: './ci-builds', nav: true, title: 'CI-Builds', auth: true}
       ]);
     });
+  }
+}
+
+class AuthorizeStep {
+  run(routingContext, next) {
+    // Check if the route has an "auth" key
+    // The reason for using `nextInstructions` is because
+    // this includes child routes.
+    if (routingContext.nextInstructions.some(i => i.config.auth)) {
+      var isLoggedIn = localStorage.getItem('access_token');
+      if (!isLoggedIn) {
+        return next.cancel(new Redirect('login'));
+      }
+    }
+
+    return next();
   }
 }
