@@ -3,10 +3,9 @@
 
   <require from='./nav-bar'></require>
   <nav-bar router.bind="router"></nav-bar>
+  <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
 
-  <div class="page-host">
-    <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
-    <contact-list></contact-list>
+  <div class="container">
     <router-view></router-view>
   </div>
 </template>
