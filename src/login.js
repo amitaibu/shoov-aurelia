@@ -15,13 +15,8 @@ export class Login {
     this.api = api;
   }
 
-  activate(params, qs, config) {
-  }
-
-
   get canLogin() {
-    // return this.credentials.username && this.credentials.pass && !this.api.isRequesting;
-    return this.credentials.username && this.credentials.pass;
+    return this.credentials.username && this.credentials.pass && !this.api.isRequesting;
   }
 
   login() {

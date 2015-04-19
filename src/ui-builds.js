@@ -8,10 +8,14 @@ export class CiBuilds {
     this.buildsApi = buildsApi;
 
     var self = this;
-    buildsApi.get()
+
+  }
+
+  activate(params, qs, config) {
+    this.buildsApi.get()
       .then(response => {
         var data = JSON.parse(response.response).data;
-        self.builds = data;
+        this.builds = data;
       });
   }
 

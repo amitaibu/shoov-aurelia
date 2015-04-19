@@ -15,6 +15,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.4",
     "css": "github:systemjs/plugin-css@0.1.9",
     "font-awesome": "npm:font-awesome@4.3.0",
+    "js-coder/lostorage.js": "github:js-coder/lostorage.js@1.1.0",
     "nprogress": "github:rstacruz/nprogress@0.1.6",
     "traceur": "github:jmcriffey/bower-traceur@0.0.87",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87",
