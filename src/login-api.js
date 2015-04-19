@@ -5,7 +5,6 @@ import {HttpClient} from 'aurelia-http-client';
 export class LoginApi {
   baseUri = 'http://localhost/shoov/www'
 
-
   constructor(http){
     this.http = http;
   }

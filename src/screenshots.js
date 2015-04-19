@@ -22,8 +22,9 @@ export class Screenshots {
       .then(response => {
         var data = JSON.parse(response.response).data;
         this.screenshots = data;
-        log(data);
       });
+
+    this.showDiff = false;  
   }
 
 

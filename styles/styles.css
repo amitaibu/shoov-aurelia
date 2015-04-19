@@ -1,3 +1,18 @@
+.layover-image {
+  position: relative;
+}
+
+.layover-image > * {
+  position: absolute;
+}
+
+.layover-image .second-wrapper {
+  overflow: hidden;
+  outline: 2px solid black;
+}
+
+
+
 .splash {
     text-align: center;
     margin: 10% 0 0 0;
