@@ -26,6 +26,8 @@ export class Screenshots {
       });
 
     this.showDiff = false;
+
+    // $(':checkbox').checkboxpicker();
   }
 
 

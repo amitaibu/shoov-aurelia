@@ -55,11 +55,13 @@
             <img show.bind="$parent.showDiff" class="diff-image" src.bind="screenshot.diff.self" />
 
             <require from="./elements/layover-image"></require>
-            <layover-image first.bind="screenshot.baseline.self" second.bind="screenshot.regression.self" width.bind="screenshot.regression.width" height.bind="screenshot.regression.height"></layover-image>
+            <layover-image show.bind="!$parent.showDiff" first.bind="screenshot.baseline.self" second.bind="screenshot.regression.self" width.bind="screenshot.regression.width" height.bind="screenshot.regression.height"></layover-image>
           </div>
 
         </li>
       </ul>
     </div>
   </div>
+
+
 </template>
