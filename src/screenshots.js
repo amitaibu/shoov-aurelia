@@ -1,6 +1,7 @@
 import {inject} from 'aurelia-framework';
 import {BuildsApi} from './services/builds-api';
 import {ScreenshotsApi} from './services/screenshots-api';
+// import 'vsn4ik/bootstrap-checkbox';
 
 @inject(BuildsApi, ScreenshotsApi)
 export class Screenshots {
@@ -24,7 +25,7 @@ export class Screenshots {
         this.screenshots = data;
       });
 
-    this.showDiff = false;  
+    this.showDiff = false;
   }
 
 

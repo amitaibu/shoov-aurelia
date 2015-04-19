@@ -31,7 +31,7 @@
           </div>
 
           <div class="col-md-6 show-diff">
-            Show diff <input bs-switch type="checkbox" ng-model="showDiff">
+            Show diff <input type="checkbox" checked.bind="showDiff">
           </div>
         </div>
       </div>
@@ -51,7 +51,8 @@
           </div>
 
           <div css="height: ${screenshot.regression.height}px;">
-            <!-- <img show.bind="showDiff" class="diff-image" src.bind="screenshot.diff.self" /> -->
+
+            <img show.bind="$parent.showDiff" class="diff-image" src.bind="screenshot.diff.self" />
 
             <require from="./elements/layover-image"></require>
             <layover-image first.bind="screenshot.baseline.self" second.bind="screenshot.regression.self" width.bind="screenshot.regression.width" height.bind="screenshot.regression.height"></layover-image>

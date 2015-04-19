@@ -19,6 +19,7 @@ System.config({
     "nprogress": "github:rstacruz/nprogress@0.1.6",
     "traceur": "github:jmcriffey/bower-traceur@0.0.87",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87",
+    "vsn4ik/bootstrap-checkbox": "github:vsn4ik/bootstrap-checkbox@1.2.7",
     "github:aurelia/binding@0.5.0": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.6.0",
       "aurelia-metadata": "github:aurelia/metadata@0.4.0",
