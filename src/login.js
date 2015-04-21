@@ -21,8 +21,6 @@ export class Login {
 
   login() {
     this.api.login(this.credentials)
-      .then(x => {
-        this.router.navigate('');
-      });
+      .then(x => this.router.navigate('ui-builds'));
   }
 }
