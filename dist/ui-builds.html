@@ -8,6 +8,8 @@
       If a regression was found it will be listed here, otherwise if all images passed, it will not appear here.
       A build is identified by the git commit they were created in, so if you run your tests
       manually, you will find the screenshots under that commit.
+
+      <i class="fa fa-spinner fa-spin fa-2x"></i>
     </div>
 
     <ul class="builds">
@@ -15,6 +17,7 @@
          <a href.bind="'#/screenshots/' + build.id">${build.label}</a>
       </li>
     </ul>
+
   </div>
 </div>
 </template>

@@ -9,10 +9,12 @@ export class CiBuilds {
   }
 
   activate(params, qs, config) {
+    this.isRequesting = true;
     this.reposApi.get()
       .then(response => {
         var data = JSON.parse(response.response).data;
         this.repos = data;
+        this.isRequesting = false;
       });
   }
 
