@@ -1,5 +1,5 @@
 System.register(['aurelia-framework', 'aurelia-http-client'], function (_export) {
-  var inject, HttpClient, _classCallCheck, _createClass, BuildsApi;
+  var inject, HttpClient, _classCallCheck, _createClass, ReposApi;
 
   return {
     setters: [function (_aureliaFramework) {
@@ -14,41 +14,40 @@ System.register(['aurelia-framework', 'aurelia-http-client'], function (_export)
 
       _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-      BuildsApi = (function () {
-        function BuildsApi(http) {
-          _classCallCheck(this, _BuildsApi);
+      ReposApi = (function () {
+        function ReposApi(http) {
+          _classCallCheck(this, _ReposApi);
 
           this.baseUri = 'http://localhost/shoov/www';
 
           this.http = http;
         }
 
-        var _BuildsApi = BuildsApi;
+        var _ReposApi = ReposApi;
 
-        _createClass(_BuildsApi, [{
+        _createClass(_ReposApi, [{
           key: 'baseUri',
           value: undefined,
           enumerable: true
         }, {
           key: 'get',
-          value: function get(buildId) {
+          value: function get() {
             var _this = this;
 
-            buildId = buildId || '';
             this.isRequesting = true;
             return this.http.configure(function (x) {
               x.withBaseUri(_this.baseUri);
               x.withHeader('access-token', localStorage.getItem('access_token'));
-            }).get('api/builds/' + buildId);
+            }).get('api/github_repos');
           }
         }]);
 
-        BuildsApi = inject(HttpClient)(BuildsApi) || BuildsApi;
-        return BuildsApi;
+        ReposApi = inject(HttpClient)(ReposApi) || ReposApi;
+        return ReposApi;
       })();
 
-      _export('BuildsApi', BuildsApi);
+      _export('ReposApi', ReposApi);
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZpY2VzL2J1aWxkcy1hcGkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijt5REFJYSxTQUFTOzs7O2lDQUpkLE1BQU07O3NDQUNOLFVBQVU7Ozs7Ozs7OztBQUdMLGVBQVM7QUFHVCxpQkFIQSxTQUFTLENBR1IsSUFBSSxFQUFDOzs7ZUFGakIsT0FBTyxHQUFHLDRCQUE0Qjs7QUFHcEMsY0FBSSxDQUFDLElBQUksR0FBRyxJQUFJLENBQUM7U0FDbEI7O3lCQUxVLFNBQVM7Ozs7Ozs7O2lCQU9qQixhQUFDLE9BQU8sRUFBRTs7O0FBQ1gsbUJBQU8sR0FBRyxPQUFPLElBQUksRUFBRSxDQUFDO0FBQ3hCLGdCQUFJLENBQUMsWUFBWSxHQUFHLElBQUksQ0FBQztBQUN6QixtQkFBTyxJQUFJLENBQUMsSUFBSSxDQUNiLFNBQVMsQ0FBQyxVQUFBLENBQUMsRUFBSTtBQUNkLGVBQUMsQ0FBQyxXQUFXLENBQUMsTUFBSyxPQUFPLENBQUMsQ0FBQztBQUM1QixlQUFDLENBQUMsVUFBVSxDQUFDLGNBQWMsRUFBRSxZQUFZLENBQUMsT0FBTyxDQUFDLGNBQWMsQ0FBQyxDQUFDLENBQUM7YUFDcEUsQ0FBQyxDQUNELEdBQUcsQ0FBQyxhQUFhLEdBQUcsT0FBTyxDQUFDLENBQUM7V0FDakM7OztBQWhCVSxpQkFBUyxHQURyQixNQUFNLENBQUMsVUFBVSxDQUFDLENBQ04sU0FBUyxLQUFULFNBQVM7ZUFBVCxTQUFTOzs7MkJBQVQsU0FBUyIsImZpbGUiOiJzZXJ2aWNlcy9idWlsZHMtYXBpLmpzIiwic291cmNlUm9vdCI6Ii9zcmMvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZpY2VzL3JlcG9zLWFwaS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO3lEQUlhLFFBQVE7Ozs7aUNBSmIsTUFBTTs7c0NBQ04sVUFBVTs7Ozs7Ozs7O0FBR0wsY0FBUTtBQUdSLGlCQUhBLFFBQVEsQ0FHUCxJQUFJLEVBQUM7OztlQUZqQixPQUFPLEdBQUcsNEJBQTRCOztBQUdwQyxjQUFJLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQztTQUNsQjs7d0JBTFUsUUFBUTs7Ozs7Ozs7aUJBT2hCLGVBQUc7OztBQUNKLGdCQUFJLENBQUMsWUFBWSxHQUFHLElBQUksQ0FBQztBQUN6QixtQkFBTyxJQUFJLENBQUMsSUFBSSxDQUNiLFNBQVMsQ0FBQyxVQUFBLENBQUMsRUFBSTtBQUNkLGVBQUMsQ0FBQyxXQUFXLENBQUMsTUFBSyxPQUFPLENBQUMsQ0FBQztBQUM1QixlQUFDLENBQUMsVUFBVSxDQUFDLGNBQWMsRUFBRSxZQUFZLENBQUMsT0FBTyxDQUFDLGNBQWMsQ0FBQyxDQUFDLENBQUM7YUFDcEUsQ0FBQyxDQUNELEdBQUcsQ0FBQyxrQkFBa0IsQ0FBQyxDQUFDO1dBQzVCOzs7QUFmVSxnQkFBUSxHQURwQixNQUFNLENBQUMsVUFBVSxDQUFDLENBQ04sUUFBUSxLQUFSLFFBQVE7ZUFBUixRQUFROzs7MEJBQVIsUUFBUSIsImZpbGUiOiJzZXJ2aWNlcy9yZXBvcy1hcGkuanMiLCJzb3VyY2VSb290IjoiL3NyYy8ifQ==

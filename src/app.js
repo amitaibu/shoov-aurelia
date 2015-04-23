@@ -19,6 +19,7 @@ export class App {
         { route: '',              moduleId: './no-selection',   title: 'Select'},
         { route: 'contacts/:id',  moduleId: './contact-detail' },
         { route: 'login',         moduleId: './login', nav: true},
+        { route: 'ci-builds',     moduleId: './ci-builds', nav: true, title: 'CI-Builds', auth: true},
         { route: 'ui-builds',     moduleId: './ui-builds', nav: true, title: 'UI-Builds', auth: true},
         { route: 'screenshots/:id', moduleId: './screenshots', title: 'Regression screenshots', auth: true}
       ]);

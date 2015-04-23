@@ -1,18 +1,18 @@
 import {inject} from 'aurelia-framework';
-import {BuildsApi} from './services/builds-api';
+import {ReposApi} from './services/repos-api';
 
-@inject(BuildsApi)
+@inject(ReposApi)
 export class CiBuilds {
 
-  constructor(buildsApi) {
-    this.buildsApi = buildsApi;
+  constructor(reposApi) {
+    this.reposApi = reposApi;
   }
 
   activate(params, qs, config) {
-    this.buildsApi.get()
+    this.reposApi.get()
       .then(response => {
         var data = JSON.parse(response.response).data;
-        this.builds = data;
+        this.repos = data;
       });
   }
 

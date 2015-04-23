@@ -46,7 +46,7 @@ System.register(['aurelia-framework', 'aurelia-router', './login-api'], function
             var _this = this;
 
             this.api.login(this.credentials).then(function (x) {
-              return _this.router.navigate('ui-builds');
+              return _this.router.navigate('ci-builds');
             });
           }
         }]);
