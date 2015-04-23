@@ -8,7 +8,17 @@
 
     <ul class="remote-repos">
       <li repeat.for="repo of repos" class="repo-item">
-        ${repo.label}
+
+        <div class="row">
+          <div class="col-md-4 name">
+            ${repo.label}
+          </div>
+
+          <div class="col-md-4 ops">
+            <input bs-switch type="checkbox" checked.bind="repo.selected"/>
+          </div>
+        </div>
+
       </li>
     </ul>
   </div>
